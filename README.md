@@ -1,12 +1,12 @@
 # Exception-Handling
 
-### Exceptions interrupt the normal flow of your program and can occur due to various reasons like server issues, invalid user input, or data not found.
+### Exceptions interrupt the normal flow of the program and can occur due to various reasons like server issues, invalid user input, or data not found.
 
 
 ## Why Exception Handling Matters:
 
-Prevent application crashes: Exceptions, if unhandled, can crash your application. Proper handling ensures smooth operation even when errors occur.
-Provide informative messages: Instead of showing technical error messages to users, you can return custom error messages explaining the issue in a user-friendly way.
+Prevent application crashes: Exceptions, if unhandled, can crash the application. Proper handling ensures smooth operation even when errors occur.
+Provide informative messages: Instead of showing technical error messages to users, we can return custom error messages explaining the issue in a user-friendly way.
 
 
 ## Spring Boot's Approach:
@@ -17,15 +17,17 @@ Create an endpoint that throws an exception: This simulates an error scenario in
 
 Create a method with the @ExceptionHandler annotation: This method will be invoked whenever the specific exception is thrown in your application.
 
-Handle the exception and return a custom error message: Inside the @ExceptionHandler method, you can define logic to handle the exception and return a user-friendly error response.
+Handle the exception and return a custom error message: Inside the @ExceptionHandler method, we can define logic to handle the exception and return a user-friendly error response.
 
 
 
 ## Checked vs. Unchecked Exceptions:
 
-Checked Exceptions: These are exceptions that the compiler forces you to handle. They are declared with the throws keyword in a method signature. Common examples include IOException or SQLException.
+Checked Exceptions: 
+These are exceptions that the compiler forces you to handle. They are declared with the throws keyword in a method signature. Common examples include IOException or SQLException.
 
-Unchecked Exceptions: These are exceptions that the compiler doesn't require you to handle explicitly. They didn't require to add the throws keyword in a method signature. They typically represent programming errors or unexpected conditions. Examples include NullPointerException or IndexOutOfBoundsException.
+Unchecked Exceptions: 
+These are exceptions that the compiler doesn't require you to handle explicitly. They weren't required to add the throws keyword in a method signature. They typically represent programming errors or unexpected conditions. Examples include NullPointerException or IndexOutOfBoundsException.
 
 
 
@@ -46,17 +48,25 @@ Common examples of checked exceptions include IOException, SQLException, and Fil
 
 ### Choosing the Right Base Class:
 
-- If your exception represents an unexpected condition or programming error that the developer should handle, extend RuntimeException.
-- If your exception represents an external condition that can disrupt the normal program flow but might be recoverable, extend Exception.
+- If the exception represents an unexpected condition or programming error that the developer should handle, extend RuntimeException.
+- If the exception represents an external condition that can disrupt the normal program flow but might be recoverable, extend the Exception.
 
 
 ### Benefits of Extending RuntimeException:
 
-Simpler code: You don't need to declare the exception in the throws clause of every method that might throw it.
-More flexibility: Callers can choose to handle the exception or propagate it further without compiler enforcement.
-Drawbacks of Extending RuntimeException:
+- Simpler code: 
+We don't need to declare the exception in the throws clause of every method that might throw it.
 
-Potential for unexpected errors: If unchecked exceptions are not handled properly, they can cause the application to crash.
-Less informative: Unchecked exceptions might not provide enough information about the underlying cause of the error.
+- More flexibility: 
+Callers can choose to handle the exception or propagate it further without compiler enforcement.
+
+
+### Drawbacks of Extending RuntimeException:
+
+- Potential for unexpected errors: 
+If unchecked exceptions are not handled properly, they can cause the application to crash.
+
+- Less informative:
+Unchecked exceptions might not provide enough information about the underlying cause of the error.
 
 
