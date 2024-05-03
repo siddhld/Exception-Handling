@@ -5,8 +5,9 @@
 
 ## Why Exception Handling Matters:
 
-Prevent application crashes: Exceptions, if unhandled, can crash the application. Proper handling ensures smooth operation even when errors occur.
-Provide informative messages: Instead of showing technical error messages to users, we can return custom error messages explaining the issue in a user-friendly way.
+- Prevent application crashes: Exceptions, if unhandled, can crash the application. Proper handling ensures smooth operation even when errors occur.
+
+- Provide informative messages: Instead of showing technical error messages to users, we can return custom error messages explaining the issue in a user-friendly way.
 
 
 ## Spring Boot's Approach:
